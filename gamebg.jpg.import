@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsbbf11w5fx3b"
-path="res://.godot/imported/louis-litt.jpg-084b52898905fc2ce76d7c144a657de0.ctex"
+uid="uid://ckm2fgpaiol5h"
+path="res://.godot/imported/gamebg.jpg-cc3e63496762f24d75ddacd0076fec44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://louis-litt.jpg"
-dest_files=["res://.godot/imported/louis-litt.jpg-084b52898905fc2ce76d7c144a657de0.ctex"]
+source_file="res://gamebg.jpg"
+dest_files=["res://.godot/imported/gamebg.jpg-cc3e63496762f24d75ddacd0076fec44.ctex"]
 
 [params]
 
