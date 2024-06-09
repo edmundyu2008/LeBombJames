@@ -20,8 +20,8 @@ script = ExtResource("1_pxi2b")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 546.0
-offset_bottom = 962.0
+offset_right = 540.0
+offset_bottom = 960.0
 texture = ExtResource("2_44c2b")
 
 [node name="PlayButton" type="TextureButton" parent="."]
