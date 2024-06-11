@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cltw1jastd5q3"]
+[gd_scene load_steps=10 format=3 uid="uid://cltw1jastd5q3"]
 
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="1_xvef2"]
+[ext_resource type="Script" path="res://player_plane/plane.gd" id="1_yi7cu"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="2_mxmei"]
 [ext_resource type="Script" path="res://components/move_input_component.gd" id="3_2aq8m"]
+[ext_resource type="Resource" uid="uid://l3xm0ms755d4" path="res://player_plane/ship_move_stats.tres" id="4_tjnxr"]
+[ext_resource type="Script" path="res://components/position_clamp_component.gd" id="5_0p80t"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="7_nxgsa"]
+[ext_resource type="PackedScene" uid="uid://3mpw5337n2al" path="res://projectiles/laser.tscn" id="8_w3yhp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_87lq6"]
 animations = [{
@@ -16,6 +21,7 @@ animations = [{
 }]
 
 [node name="Plane" type="Node2D"]
+script = ExtResource("1_yi7cu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 2)
@@ -28,4 +34,16 @@ velocity = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("move_component")]
 script = ExtResource("3_2aq8m")
+move_stats = ExtResource("4_tjnxr")
 move_component = NodePath("../MoveComponent")
+
+[node name="PositionClampComponent" type="Node2D" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("5_0p80t")
+actor = NodePath("..")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("7_nxgsa")
+scene = ExtResource("8_w3yhp")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -29)
