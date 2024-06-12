@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://3mpw5337n2al"]
+[gd_scene load_steps=4 format=3 uid="uid://3mpw5337n2al"]
+
+[ext_resource type="Script" path="res://projectiles/laser.gd" id="1_oocpv"]
+[ext_resource type="Texture2D" uid="uid://cj6ht5fc8uwt1" path="res://playerbullet.png" id="1_rvjmy"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="2_n2shx"]
 
 [node name="Laser" type="Node2D"]
+script = ExtResource("1_oocpv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -15)
+texture = ExtResource("1_rvjmy")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("2_n2shx")
+actor = NodePath("..")
+velocity = Vector2(2.08165e-12, -230)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.5, -14.5)
+scale = Vector2(0.45, 1.45)

@@ -46,4 +46,8 @@ script = ExtResource("7_nxgsa")
 scene = ExtResource("8_w3yhp")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(0, -29)
+position = Vector2(0, -33)
+
+[node name="FireRateTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
