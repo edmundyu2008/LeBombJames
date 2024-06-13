@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp7fxb1kkrl7r"]
+
+[ext_resource type="Script" path="res://components/stats_component.gd" id="1_bvenw"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="2_14xhu"]
+[ext_resource type="Script" path="res://components/hurtbox_component.gd" id="3_bk4u8"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="4_q7e25"]
+
+[node name="OppsDallas" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("1_bvenw")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("2_14xhu")
+actor = NodePath("..")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_bk4u8")
+
+[node name="HitboxComponent" type="Node" parent="."]
+script = ExtResource("4_q7e25")

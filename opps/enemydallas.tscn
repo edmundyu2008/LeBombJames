@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://0458jylbf5qd"]
+
+[ext_resource type="PackedScene" uid="uid://dp7fxb1kkrl7r" path="res://opps/opps_dallas.tscn" id="1_v08r7"]
+[ext_resource type="Texture2D" uid="uid://b84iiejjntju2" path="res://opps/enemydallas.png" id="2_m4uvk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33pwh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m4uvk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8hdrf"]
+radius = 40.0
+height = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kp0wa"]
+radius = 35.0143
+
+[node name="EnemyDallas" instance=ExtResource("1_v08r7")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+rotation = 3.14159
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_33pwh")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 3
+
+[node name="MoveComponent" parent="." index="2"]
+velocity = Vector2(0, 40)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="3"]
+position = Vector2(-5.24521e-06, 0.500003)
+scale = Vector2(3.8, 3.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
+shape = SubResource("CapsuleShape2D_8hdrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource("CircleShape2D_kp0wa")

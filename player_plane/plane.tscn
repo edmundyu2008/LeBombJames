@@ -25,6 +25,7 @@ script = ExtResource("1_yi7cu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 2)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_87lq6")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]

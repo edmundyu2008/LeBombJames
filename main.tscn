@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://sgq6lpm8oo6y"]
+[gd_scene load_steps=4 format=3 uid="uid://sgq6lpm8oo6y"]
 
 [ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="1_g5nok"]
 [ext_resource type="PackedScene" uid="uid://cltw1jastd5q3" path="res://player_plane/plane.tscn" id="2_31cqr"]
+[ext_resource type="PackedScene" uid="uid://0458jylbf5qd" path="res://opps/enemydallas.tscn" id="3_r03gi"]
 
 [node name="Game" type="Node2D"]
 
@@ -12,3 +13,18 @@ texture = ExtResource("1_g5nok")
 
 [node name="Plane" parent="." instance=ExtResource("2_31cqr")]
 position = Vector2(256, 832)
+
+[node name="EnemyDallas" parent="." instance=ExtResource("3_r03gi")]
+position = Vector2(62, 90)
+
+[node name="EnemyDallas2" parent="." instance=ExtResource("3_r03gi")]
+position = Vector2(215, 98)
+
+[node name="EnemyDallas3" parent="." instance=ExtResource("3_r03gi")]
+position = Vector2(431, 90)
+
+[node name="EnemyDallas4" parent="." instance=ExtResource("3_r03gi")]
+position = Vector2(154, 204)
+
+[node name="EnemyDallas5" parent="." instance=ExtResource("3_r03gi")]
+position = Vector2(370, 210)
