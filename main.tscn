@@ -18,13 +18,13 @@ position = Vector2(256, 832)
 position = Vector2(62, 90)
 
 [node name="EnemyDallas2" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(215, 98)
+position = Vector2(264, 104)
 
 [node name="EnemyDallas3" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(431, 90)
+position = Vector2(472, 112)
 
 [node name="EnemyDallas4" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(154, 204)
+position = Vector2(168, 248)
 
 [node name="EnemyDallas5" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(370, 210)
+position = Vector2(352, 232)

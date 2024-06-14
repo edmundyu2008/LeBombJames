@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://0458jylbf5qd"]
+[gd_scene load_steps=7 format=3 uid="uid://0458jylbf5qd"]
 
 [ext_resource type="PackedScene" uid="uid://dp7fxb1kkrl7r" path="res://opps/opps_dallas.tscn" id="1_v08r7"]
+[ext_resource type="Script" path="res://opps/enemydallas.gd" id="2_156o2"]
 [ext_resource type="Texture2D" uid="uid://b84iiejjntju2" path="res://opps/enemydallas.png" id="2_m4uvk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_33pwh"]
@@ -15,21 +16,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8hdrf"]
-radius = 40.0
-height = 80.0
+radius = 42.0
+height = 84.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kp0wa"]
-radius = 35.0143
+radius = 34.0147
 
 [node name="EnemyDallas" instance=ExtResource("1_v08r7")]
+script = ExtResource("2_156o2")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 rotation = 3.14159
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_33pwh")
-
-[node name="StatsComponent" parent="." index="1"]
-health = 3
 
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(0, 40)

@@ -1,4 +1,5 @@
 extends Node2D
+
 @onready var stats_component: StatsComponent = $StatsComponent as StatsComponent
 @onready var move_component: MoveComponent = $MoveComponent as MoveComponent
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
