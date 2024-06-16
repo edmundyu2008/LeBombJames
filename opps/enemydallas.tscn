@@ -16,11 +16,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8hdrf"]
-radius = 42.0
-height = 84.0
+radius = 37.0
+height = 74.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kp0wa"]
-radius = 34.0147
+radius = 33.0151
 
 [node name="EnemyDallas" instance=ExtResource("1_v08r7")]
 script = ExtResource("2_156o2")
@@ -29,6 +29,9 @@ script = ExtResource("2_156o2")
 rotation = 3.14159
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_33pwh")
+
+[node name="StatsComponent" parent="." index="1"]
+health = 3
 
 [node name="MoveComponent" parent="." index="2"]
 velocity = Vector2(0, 40)
