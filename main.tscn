@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://sgq6lpm8oo6y"]
+[gd_scene load_steps=5 format=3 uid="uid://sgq6lpm8oo6y"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_0qyg6"]
 [ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="1_g5nok"]
 [ext_resource type="PackedScene" uid="uid://cltw1jastd5q3" path="res://player_plane/plane.tscn" id="2_31cqr"]
-[ext_resource type="PackedScene" uid="uid://0458jylbf5qd" path="res://opps/enemydallas.tscn" id="3_r03gi"]
+[ext_resource type="PackedScene" uid="uid://cay4vl7nga5bg" path="res://opps/opp_generator.tscn" id="3_jg6w0"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_0qyg6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 540.0
@@ -14,17 +16,4 @@ texture = ExtResource("1_g5nok")
 [node name="Plane" parent="." instance=ExtResource("2_31cqr")]
 position = Vector2(256, 832)
 
-[node name="EnemyDallas" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(62, 90)
-
-[node name="EnemyDallas2" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(264, 104)
-
-[node name="EnemyDallas3" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(472, 112)
-
-[node name="EnemyDallas4" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(168, 248)
-
-[node name="EnemyDallas5" parent="." instance=ExtResource("3_r03gi")]
-position = Vector2(352, 232)
+[node name="OppGenerator" parent="." instance=ExtResource("3_jg6w0")]

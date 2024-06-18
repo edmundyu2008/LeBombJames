@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cay4vl7nga5bg"]
+
+[ext_resource type="Script" path="res://opps/opp_generator.gd" id="1_1msbo"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="1_f8ivy"]
+[ext_resource type="PackedScene" uid="uid://0458jylbf5qd" path="res://opps/enemydallas.tscn" id="2_je1k7"]
+
+[node name="OppGenerator" type="Node2D"]
+script = ExtResource("1_1msbo")
+EnemyDallasScene = ExtResource("2_je1k7")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("1_f8ivy")
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
