@@ -21,8 +21,8 @@ position = Vector2(256, 832)
 [node name="OppGenerator" parent="." instance=ExtResource("3_jg6w0")]
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 376.0
-offset_right = 502.0
+offset_left = 352.0
+offset_right = 478.0
 offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
