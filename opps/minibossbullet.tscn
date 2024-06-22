@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://y7j4rs1c3mq5"]
+
+[ext_resource type="Texture2D" uid="uid://x5hkqoj4uibj" path="res://opps/enemybullet.png" id="1_6igyd"]
+[ext_resource type="Script" path="res://opps/minibossbullet.gd" id="1_fvaa2"]
+[ext_resource type="Script" path="res://components/hitbox_component.gd" id="2_n5w7r"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="3_p307j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snvkm"]
+size = Vector2(9, 29)
+
+[node name="minibossbullet" type="Node2D"]
+script = ExtResource("1_fvaa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -14)
+rotation = 3.14159
+texture = ExtResource("1_6igyd")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+position = Vector2(0, 1)
+collision_layer = 0
+script = ExtResource("2_n5w7r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0.5, -15.5)
+shape = SubResource("RectangleShape2D_snvkm")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("3_p307j")
+actor = NodePath("..")
+velocity = Vector2(0, 180)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.578598, -14.6555)
+rotation = 3.14159
+scale = Vector2(0.435953, 1.43127)
