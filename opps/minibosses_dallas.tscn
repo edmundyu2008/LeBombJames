@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dy1a3ag5gdkam"]
+[gd_scene load_steps=10 format=3 uid="uid://dy1a3ag5gdkam"]
 
 [ext_resource type="PackedScene" uid="uid://dp7fxb1kkrl7r" path="res://opps/opps_dallas.tscn" id="1_tprkt"]
 [ext_resource type="Texture2D" uid="uid://ls4i3os8dq3o" path="res://opps/minibossdallas.png" id="2_7b7cj"]
@@ -20,13 +20,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aog4w"]
-radius = 35.0
-height = 70.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_yuawi"]
-radius = 31.0644
-
 [node name="MinibossesDallas" instance=ExtResource("1_tprkt")]
 script = ExtResource("2_37vji")
 
@@ -42,12 +35,13 @@ health = 10
 position = Vector2(5.96046e-08, -3)
 scale = Vector2(6.45, 3.7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" index="0"]
-position = Vector2(0, -3)
-shape = SubResource("CapsuleShape2D_aog4w")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtboxComponent" index="0"]
+polygon = PackedVector2Array(-27, -41, 25, -41, 34, -31, 34, -26, 17, -18, 32, -3, 61, -3, 61, 8, 13, 8, -1, 35, -13, 9, -62, 9, -62, -3, -32, -3, -19, -18, -35, -26, -35, -31)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" index="0"]
-shape = SubResource("CircleShape2D_yuawi")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitboxComponent" index="0"]
+position = Vector2(3.57628e-07, -2.38419e-07)
+scale = Vector2(0.937386, 0.88621)
+polygon = PackedVector2Array(-1, 35, 13, 8, 61, 8, 61, -3, 32, -3, 13.8683, -20.3112, 30.9371, -30.4668, 33.0707, -34.9804, 25, -41, -27, -41, -33.0707, -36.1088, -32.0039, -30.4668, -17.0687, -20.3112, -33, -3, -62, -3, -62, 9, -14, 9)
 
 [node name="ScoreComponent" parent="." index="7"]
 adjust_amount = 5
