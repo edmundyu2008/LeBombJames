@@ -1,9 +1,11 @@
 class_name PlayerHealthComponent
 extends Node
 
-@export var stats_component: StatsComponent
+@export var player_health: int = 3:
+	set(value):
+		player_health = value
+		player_health_changed.emit()
+		if player_health == 0: no_player_health.emit()
 
-@export var adjust_amount = 1
-
-func adjust_health(amount:int = adjust_amount):
-	stats_component.health -= amount
+signal player_health_changed() 
+signal no_player_health() 
