@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://3mpw5337n2al"]
 
 [ext_resource type="Script" path="res://projectiles/laser.gd" id="1_oocpv"]
-[ext_resource type="Texture2D" uid="uid://cj6ht5fc8uwt1" path="res://playerbullet.png" id="1_rvjmy"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="2_n2shx"]
+[ext_resource type="Texture2D" uid="uid://cj6ht5fc8uwt1" path="res://player_plane/playerbullet.png" id="2_tshaq"]
 [ext_resource type="Script" path="res://components/hitbox_component.gd" id="4_molgr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc8l6"]
@@ -14,7 +14,7 @@ script = ExtResource("1_oocpv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -22)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_rvjmy")
+texture = ExtResource("2_tshaq")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("2_n2shx")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://sgq6lpm8oo6y"]
+[gd_scene load_steps=7 format=3 uid="uid://sgq6lpm8oo6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0qyg6"]
 [ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="1_g5nok"]
 [ext_resource type="PackedScene" uid="uid://cltw1jastd5q3" path="res://player_plane/plane.tscn" id="2_31cqr"]
 [ext_resource type="Resource" uid="uid://crfoy43it46ev" path="res://game_stats.tres" id="2_yk8ov"]
 [ext_resource type="PackedScene" uid="uid://cay4vl7nga5bg" path="res://opps/opp_generator.tscn" id="3_jg6w0"]
+[ext_resource type="Texture2D" uid="uid://bmeuwh7h8wwgw" path="res://UI/ingamepause.png" id="6_t6vyj"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0qyg6")
@@ -14,6 +15,14 @@ game_stats = ExtResource("2_yk8ov")
 offset_right = 540.0
 offset_bottom = 960.0
 texture = ExtResource("1_g5nok")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 32.0
+offset_bottom = 36.0
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("6_t6vyj")
 
 [node name="Plane" parent="." instance=ExtResource("2_31cqr")]
 position = Vector2(256, 832)
@@ -36,3 +45,5 @@ offset_bottom = 951.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "Health:"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

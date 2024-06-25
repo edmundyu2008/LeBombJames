@@ -6,6 +6,8 @@ extends Node2D
 @onready var score_label: Label = $ScoreLabel
 @onready var health_label: Label = $HealthLabel
 
+
+
 func _ready() -> void:
 	randomize()
 	update_score_label(game_stats.score)
@@ -23,3 +25,7 @@ func update_score_label(new_score: int) -> void:
 
 func update_health_label(new_player_health: int) -> void:
 	health_label.text = "Health: " + str(new_player_health)
+
+
+
+
