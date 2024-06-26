@@ -6,8 +6,6 @@ extends Node2D
 @onready var score_label: Label = $ScoreLabel
 @onready var health_label: Label = $HealthLabel
 
-
-
 func _ready() -> void:
 	randomize()
 	update_score_label(game_stats.score)
@@ -19,7 +17,6 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://UI/you_died.tscn")
 		)
 	
-		
 func update_score_label(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)
 
