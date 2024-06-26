@@ -29,6 +29,12 @@ window/size/window_height_override=960
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}
+
 [input]
 
 escape={

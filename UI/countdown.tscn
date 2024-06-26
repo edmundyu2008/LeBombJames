@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqj3joh0yuscj"]
 
-[ext_resource type="Script" path="res://Countdown.gd" id="1_uln5o"]
+[ext_resource type="Script" path="res://UI/Countdown.gd" id="1_uln5o"]
 [ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="2_s2o6m"]
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="3_5rcr4"]
 
@@ -20,7 +20,7 @@ offset_bottom = 960.0
 texture = ExtResource("2_s2o6m")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
