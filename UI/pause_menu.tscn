@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbc6wuup05crm"]
+[gd_scene load_steps=6 format=3 uid="uid://dbc6wuup05crm"]
 
 [ext_resource type="Script" path="res://PauseMenu.gd" id="1_tkgxw"]
+[ext_resource type="Resource" uid="uid://crfoy43it46ev" path="res://game_stats.tres" id="2_abwnu"]
 [ext_resource type="Texture2D" uid="uid://ceeqmxu057v2" path="res://UI/pauseresume.png" id="2_q160l"]
 [ext_resource type="Texture2D" uid="uid://vdy5symqu8hv" path="res://UI/pauserestart.png" id="3_xn3pc"]
 [ext_resource type="Texture2D" uid="uid://b852t733r7unj" path="res://UI/pauseexit.png" id="4_1kus6"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tkgxw")
+game_stats = ExtResource("2_abwnu")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0

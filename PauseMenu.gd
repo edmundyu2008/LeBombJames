@@ -1,4 +1,5 @@
 extends Control
+@export var game_stats: GameStats
 
 
 func resume():
@@ -25,6 +26,8 @@ func _on_resume_pressed():
 func _on_restart_pressed():
 	resume()
 	get_tree().reload_current_scene()
+	game_stats.score = 0
+	game_stats.player_health = 3
 
 
 func _on_exit_pressed():

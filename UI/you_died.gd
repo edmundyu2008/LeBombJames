@@ -14,4 +14,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		game_stats.score = 0
+		game_stats.player_health = 3
 		get_tree().change_scene_to_file("res://UI/main_menu.tscn")
