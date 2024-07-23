@@ -13,4 +13,6 @@ func _ready() -> void:
 		score_component.adjust_score()
 	)
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
+	hitbox_component.hit_hurtbox.connect(queue_free.unbind(1))
+	
 

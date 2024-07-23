@@ -12,6 +12,7 @@ extends "res://opps/opps_dallas.gd"
 
 func _ready() -> void:
 	fire_rate_timer.timeout.connect(fire_lasers)
+	hitbox_component.hit_hurtbox.connect(queue_free.unbind(1))
 	super()
 	
 	for state in states.get_children():

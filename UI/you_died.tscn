@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4ja00xnw3coh"]
+[gd_scene load_steps=5 format=3 uid="uid://d4ja00xnw3coh"]
 
 [ext_resource type="Script" path="res://UI/you_died.gd" id="1_fyss8"]
 [ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="1_x420y"]
 [ext_resource type="Resource" uid="uid://crfoy43it46ev" path="res://game_stats.tres" id="2_xpl2k"]
+[ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="4_b0pga"]
 
 [node name="YouDied" type="Control"]
 layout_mode = 3
@@ -34,6 +35,7 @@ layout_mode = 2
 [node name="YouDiedLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b0pga")
 theme_override_font_sizes/font_size = 50
 text = "You Died"
 horizontal_alignment = 1
@@ -44,6 +46,7 @@ layout_mode = 2
 [node name="Score" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b0pga")
 text = "Score:"
 
 [node name="ScoreValue" type="Label" parent="CenterContainer/VBoxContainer/ScoreHBoxContainer"]
@@ -52,6 +55,7 @@ layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b0pga")
 text = "0"
 
 [node name="HighScoreHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
@@ -60,6 +64,7 @@ layout_mode = 2
 [node name="HighScore" type="Label" parent="CenterContainer/VBoxContainer/HighScoreHBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b0pga")
 text = "HighScore:"
 
 [node name="HighScoreValue" type="Label" parent="CenterContainer/VBoxContainer/HighScoreHBoxContainer"]
@@ -67,6 +72,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b0pga")
 text = "0"
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
@@ -77,6 +83,7 @@ text = "
 [node name="MenuLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b0pga")
 theme_override_font_sizes/font_size = 20
 text = "Press space to return to main menu"
 horizontal_alignment = 1
