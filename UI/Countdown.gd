@@ -1,21 +1,19 @@
-extends Control
+extends Node
 
-var label = Label
-var time = Timer
+@onready var label = $Label
+@onready var timer = $Timer
 
 
 func _ready():
-	label = $Label
-	time = $Timer
-	time.start()
+	timer.start()
 
 
 func start_game():
-	var time_left = time.time_left
+	var time_left = timer.time_left
 	var second = int(time_left) % 60
 	return [second]
 
 func _process(delta):
 	label.text = "%01d" % start_game()
-	if time.time_left <= 1:
+	if timer.time_left <= 0:
 		get_tree().change_scene_to_file("res://main.tscn")

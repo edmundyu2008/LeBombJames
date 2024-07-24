@@ -18,15 +18,18 @@ offset_bottom = 960.0
 texture = ExtResource("1_g5nok")
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 336.0
-offset_right = 462.0
-offset_bottom = 55.0
+z_index = 1
+offset_left = 334.0
+offset_top = -3.0
+offset_right = 460.0
+offset_bottom = 52.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_v323r")
 theme_override_font_sizes/font_size = 40
 text = "SCORE"
 
 [node name="HealthLabel" type="Label" parent="."]
+z_index = 1
 offset_left = 12.0
 offset_top = 916.0
 offset_right = 100.0
