@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://sgq6lpm8oo6y"]
+[gd_scene load_steps=9 format=3 uid="uid://sgq6lpm8oo6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0qyg6"]
 [ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="1_g5nok"]
@@ -7,12 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cay4vl7nga5bg" path="res://opps/opp_generator.tscn" id="3_jg6w0"]
 [ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="6_v323r"]
 [ext_resource type="PackedScene" uid="uid://dbc6wuup05crm" path="res://UI/pause_menu.tscn" id="7_45hcr"]
+[ext_resource type="Texture2D" uid="uid://c7x5ngkq4h40s" path="res://pixelheart.png" id="9_6brik"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0qyg6")
 game_stats = ExtResource("2_yk8ov")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 540.0
 offset_bottom = 960.0
 texture = ExtResource("1_g5nok")
@@ -27,6 +28,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_v323r")
 theme_override_font_sizes/font_size = 40
 text = "SCORE"
+
+[node name="Hearts" type="TextureRect" parent="."]
+offset_left = 125.0
+offset_top = 921.0
+offset_right = 379.0
+offset_bottom = 1175.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_6brik")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="HealthLabel" type="Label" parent="."]
 z_index = 1
