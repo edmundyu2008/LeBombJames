@@ -1,9 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqj3joh0yuscj"]
+[gd_scene load_steps=8 format=3 uid="uid://dqj3joh0yuscj"]
 
 [ext_resource type="Script" path="res://UI/Countdown.gd" id="1_uln5o"]
 [ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="2_s2o6m"]
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="3_5rcr4"]
 [ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="3_opc4v"]
+
+[sub_resource type="Animation" id="Animation_47k7m"]
+resource_name = "Timer"
+length = 3.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Timer/CenterContainer/TimerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.1, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["3", "2", "1"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Timer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_l303r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Timer/CenterContainer/TimerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Timer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opka3"]
+_data = {
+"RESET": SubResource("Animation_l303r"),
+"Timer": SubResource("Animation_47k7m")
+}
 
 [node name="Countdown" type="Control"]
 layout_mode = 3
@@ -20,24 +81,40 @@ offset_right = 540.0
 offset_bottom = 960.0
 texture = ExtResource("2_s2o6m")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
-one_shot = true
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 249.0
-offset_top = 388.0
-offset_right = 306.0
-offset_bottom = 525.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_opc4v")
-theme_override_font_sizes/font_size = 100
-text = "6"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(280, 829)
 scale = Vector2(1.332, 1.375)
 texture = ExtResource("3_5rcr4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_opka3")
+}
+autoplay = "Timer"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.635294)
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Timer"]
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer/Timer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_opc4v")
+theme_override_font_sizes/font_size = 80
+text = "3"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

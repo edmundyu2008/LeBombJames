@@ -1,19 +1,14 @@
 extends Node
 
-@onready var label = $Label
-@onready var timer = $Timer
-
+@onready var timer = %Timer
+@onready var timer_label = %TimerLabel
+@onready var animation_player = $AnimationPlayer
 
 func _ready():
-	timer.start()
+	animation_player.play("Timer")
+	await animation_player.animation_finished
 
 
-func start_game():
-	var time_left = timer.time_left
-	var second = int(time_left) % 60
-	return [second]
-
-func _process(delta):
-	label.text = "%01d" % start_game()
-	if timer.time_left <= 0:
-		get_tree().change_scene_to_file("res://main.tscn")
+func _on_animation_player_animation_finished(anim_name):
+	
+	get_tree().change_scene_to_file("res://main.tscn")
