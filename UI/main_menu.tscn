@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5fs8gn08j22s"]
 
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_uu28l"]
-[ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="2_3v4vx"]
+[ext_resource type="PackedScene" uid="uid://cvw4ajho6rrms" path="res://UI/sky_background.tscn" id="2_0csxi"]
 [ext_resource type="Texture2D" uid="uid://pa77bpkaarkn" path="res://UI/playbutton.png" id="3_8roxj"]
 [ext_resource type="Texture2D" uid="uid://ddgtu5kyq16oa" path="res://UI/settingsbutton.png" id="4_apg8w"]
 [ext_resource type="Texture2D" uid="uid://cm26q4q5ogdd7" path="res://UI/exitbutton.png" id="5_q6nuy"]
@@ -18,11 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uu28l")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 540.0
-offset_bottom = 960.0
-texture = ExtResource("2_3v4vx")
+[node name="SkyBackground" parent="." instance=ExtResource("2_0csxi")]
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 0

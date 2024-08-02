@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvw4ajho6rrms"]
+
+[ext_resource type="Script" path="res://UI/sky_background.gd" id="1_2k5fc"]
+[ext_resource type="Texture2D" uid="uid://bopnctagf46us" path="res://backgroundfar.png" id="1_lwp4q"]
+[ext_resource type="Texture2D" uid="uid://nu4jjte7ko35" path="res://backgroundclose.png" id="2_eeg6y"]
+[ext_resource type="Texture2D" uid="uid://bvtcmaybxx5fj" path="res://cloudlayerclosest.png" id="3_laon0"]
+
+[node name="SkyBackground" type="ParallaxBackground"]
+script = ExtResource("1_2k5fc")
+
+[node name="Background" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+motion_mirroring = Vector2(2.08165e-12, 960)
+
+[node name="Sky" type="TextureRect" parent="Background"]
+offset_right = 540.0
+offset_bottom = 960.0
+texture = ExtResource("1_lwp4q")
+
+[node name="FarClouds" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+motion_mirroring = Vector2(2.08165e-12, 960)
+
+[node name="FarCloud" type="TextureRect" parent="FarClouds"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_eeg6y")
+stretch_mode = 1
+
+[node name="CloseClouds" type="ParallaxLayer" parent="."]
+unique_name_in_owner = true
+motion_mirroring = Vector2(2.08165e-12, 960)
+
+[node name="CloseCloud" type="TextureRect" parent="CloseClouds"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_laon0")

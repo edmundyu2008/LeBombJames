@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dqj3joh0yuscj"]
 
 [ext_resource type="Script" path="res://UI/Countdown.gd" id="1_uln5o"]
-[ext_resource type="Texture2D" uid="uid://ckm2fgpaiol5h" path="res://gamebg.jpg" id="2_s2o6m"]
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="3_5rcr4"]
 [ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="3_opc4v"]
+[ext_resource type="PackedScene" uid="uid://cvw4ajho6rrms" path="res://UI/sky_background.tscn" id="4_r5wp0"]
 
 [sub_resource type="Animation" id="Animation_l303r"]
 length = 0.001
@@ -75,12 +75,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uln5o")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 540.0
-offset_bottom = 960.0
-texture = ExtResource("2_s2o6m")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(280, 829)
 scale = Vector2(1.332, 1.375)
@@ -117,5 +111,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_opc4v")
 theme_override_font_sizes/font_size = 80
 text = "3"
+
+[node name="SkyBackground" parent="." instance=ExtResource("4_r5wp0")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
