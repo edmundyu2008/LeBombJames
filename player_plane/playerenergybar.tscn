@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0ap7bfgjphxk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mjbp0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dkot"]
+bg_color = Color(0, 0.788235, 0.968627, 1)
+
+[sub_resource type="GDScript" id="GDScript_83qgt"]
+script/source = "extends ProgressBar
+
+@onready var player_energy_lost_bar = $PlayerEnergyLostBar
+@onready var timer = $Timer
+
+var energy = 0 : set = _set_energy
+
+func _set_energy(new_energy):
+	var prev_energy = energy
+	energy = min(max_value, new_energy)
+	value = energy
+	
+	if energy <= 0:
+		queue_free
+		
+	if energy < prev_energy:
+		timer.start()
+		
+	else: 
+		player_energy_lost_bar.value = energy
+
+func init_energy(_energy):
+	max_value = _energy
+	energy = _energy
+	value = energy
+	player_energy_lost_bar.max_value = energy
+	player_energy_lost_bar.value = energy
+
+func _on_timer_timeout():
+	player_energy_lost_bar.value = energy
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0xtt"]
+bg_color = Color(0.228511, 0.228511, 0.228511, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.254902)
+shadow_offset = Vector2(2.08165e-12, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33b6s"]
+bg_color = Color(0.835294, 0.992157, 1, 1)
+
+[node name="PlayerEnergyBar" type="ProgressBar"]
+z_index = 1
+offset_right = 100.0
+offset_bottom = 4.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_mjbp0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5dkot")
+value = 50.0
+show_percentage = false
+script = SubResource("GDScript_83qgt")
+
+[node name="PlayerEnergyLostBar" type="ProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_l0xtt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_33b6s")
+value = 70.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
