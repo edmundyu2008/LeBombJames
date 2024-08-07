@@ -2,7 +2,7 @@ extends Node
 
 class_name PlayerEnergyComponent
 
-@export var player_energy: int = 3:
+@export var player_energy: int = 10:
 	set(value):
 		player_energy = value
 		player_energy_changed.emit()

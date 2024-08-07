@@ -9,6 +9,7 @@ extends Node2D
 @onready var player_destroyed_component: PlayerDestroyedComponent = $PlayerDestroyedComponent as PlayerDestroyedComponent
 @onready var player_energy: PlayerEnergy = $PlayerEnergy as PlayerEnergy
 @onready var player_energy_component: PlayerEnergyComponent = $PlayerEnergyComponent as PlayerEnergyComponent
+@onready var energy_timer: Timer = $EnergyTimer
 
 
 func _ready():
@@ -19,9 +20,13 @@ func _ready():
 	player_energy_component.player_energy_changed.connect(func():
 		player_energy.adjust_player_energy()
 )
+	energy_timer.timeout.connect(func():
+		player_energy.adjust_player_energy()
+)
 	
 func fire_lasers() -> void:
 	spawner_component.spawn(muzzle.global_position)
+
 
 
 	

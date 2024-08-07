@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cccu4jkq6vwm6"]
-
-[ext_resource type="Script" path="res://player_plane/energy_timer.gd" id="1_pw6n8"]
-
-[node name="EnergyTimer" type="Node2D"]
-script = ExtResource("1_pw6n8")
-
-[node name="EnergyLossTimer" type="Timer" parent="."]

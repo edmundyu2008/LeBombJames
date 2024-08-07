@@ -90,8 +90,10 @@ game_stats = ExtResource("14_imwu1")
 
 [node name="PlayerEnergyComponent" type="Node" parent="."]
 script = ExtResource("15_r47fi")
-player_energy = 10
 
 [node name="PlayerEnergy" type="Node" parent="."]
 script = ExtResource("16_5f4ql")
 game_stats = ExtResource("14_imwu1")
+
+[node name="EnergyTimer" type="Timer" parent="."]
+autostart = true
