@@ -5,5 +5,8 @@ extends Node
 
 @export var adjust_amount = 1
 
-func adjust_player_energy(amount:int = adjust_amount):
+func lose_player_energy(amount:int = adjust_amount):
 	game_stats.player_energy -= amount
+	
+func gain_player_energy(amount:int = adjust_amount):
+	game_stats.player_energy += amount

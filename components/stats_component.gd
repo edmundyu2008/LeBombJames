@@ -6,7 +6,7 @@ extends Node
 		health = value
 		health_changed.emit()
 		if health == 0: no_health.emit()
-		
+
 signal health_changed() 
 signal no_health() 
 

@@ -18,15 +18,15 @@ func _ready():
 		player_health.adjust_player_health()
 )
 	player_energy_component.player_energy_changed.connect(func():
-		player_energy.adjust_player_energy()
+		player_energy.lose_player_energy()
 )
 	energy_timer.timeout.connect(func():
-		player_energy.adjust_player_energy()
+		player_energy.lose_player_energy()
 )
-	
+
 func fire_lasers() -> void:
 	spawner_component.spawn(muzzle.global_position)
 
 
 
-	
+

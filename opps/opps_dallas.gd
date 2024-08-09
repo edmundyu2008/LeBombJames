@@ -10,6 +10,7 @@ extends Node2D
 
 
 
+
 func _ready() -> void: 
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
