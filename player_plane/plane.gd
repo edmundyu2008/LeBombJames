@@ -18,10 +18,10 @@ func _ready():
 		player_health.adjust_player_health()
 )
 	player_energy_component.player_energy_changed.connect(func():
-		player_energy.lose_player_energy()
+		player_energy.adjust_player_energy(player_energy.amount)
 )
 	energy_timer.timeout.connect(func():
-		player_energy.lose_player_energy()
+		player_energy_component.player_energy -= 1
 )
 
 func fire_lasers() -> void:

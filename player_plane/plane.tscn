@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://l3xm0ms755d4" path="res://player_plane/ship_move_stats.tres" id="4_tjnxr"]
 [ext_resource type="Script" path="res://components/position_clamp_component.gd" id="5_0p80t"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="7_nxgsa"]
-[ext_resource type="PackedScene" uid="uid://3mpw5337n2al" path="res://player_plane/laser.tscn" id="8_w3yhp"]
+[ext_resource type="PackedScene" uid="uid://cm4wy11gurd1o" path="res://player_plane/laser.tscn" id="8_w3yhp"]
 [ext_resource type="Script" path="res://components/hurtbox_component.gd" id="10_l1c4b"]
 [ext_resource type="Script" path="res://components/player_health_component.gd" id="12_bmr8r"]
 [ext_resource type="Script" path="res://components/player_hurt_component.gd" id="12_ledul"]
@@ -75,7 +75,7 @@ script = ExtResource("7_nxgsa")
 scene = ExtResource("8_w3yhp")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(0, -33)
+position = Vector2(0, -63)
 
 [node name="EnergyTimer" type="Timer" parent="."]
 wait_time = 1.5
