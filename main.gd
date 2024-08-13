@@ -22,6 +22,7 @@ func _ready() -> void:
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://UI/you_died.tscn")
 		)
+	print("hohoidsa")
 	
 
 func update_health_points(new_player_health: int) -> void:

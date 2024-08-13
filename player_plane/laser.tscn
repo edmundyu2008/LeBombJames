@@ -1,35 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://3mpw5337n2al"]
+[gd_scene load_steps=2 format=3 uid="uid://3mpw5337n2al"]
 
-[ext_resource type="Script" path="res://player_plane/laser.gd" id="1_s7ycm"]
-[ext_resource type="Texture2D" uid="uid://cj6ht5fc8uwt1" path="res://player_plane/playerbullet.png" id="2_6nstk"]
-[ext_resource type="Script" path="res://components/move_component.gd" id="3_y8f3a"]
-[ext_resource type="Script" path="res://components/hitbox_component.gd" id="4_48wqo"]
+[sub_resource type="GDScript" id="GDScript_jg0fq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc8l6"]
-size = Vector2(14, 44)
+[node name="PlayerEnergyBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_jg0fq")
 
-[node name="Laser" type="Node2D"]
-script = ExtResource("1_s7ycm")
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 879.0
+offset_right = 330.0
+offset_bottom = 906.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, -22)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_6nstk")
+[node name="EnergyLostTimer" type="Timer" parent="."]
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
-script = ExtResource("3_y8f3a")
-actor = NodePath("..")
-velocity = Vector2(2.08165e-12, -230)
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, -22)
-scale = Vector2(0.7, 2.2)
-
-[node name="HitboxComponent" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("4_48wqo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(0, -22)
-shape = SubResource("RectangleShape2D_mc8l6")
+[connection signal="timeout" from="EnergyLostTimer" to="." method="_on_energy_lost_timer_timeout"]
