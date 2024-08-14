@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cltw1jastd5q3"]
+[gd_scene load_steps=20 format=3 uid="uid://cltw1jastd5q3"]
 
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="1_xvef2"]
 [ext_resource type="Script" path="res://player_plane/plane.gd" id="1_yi7cu"]
@@ -28,6 +28,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgnu0"]
+bg_color = Color(0.193497, 0.279596, 0.375466, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux4b1"]
+bg_color = Color(0.313726, 0.67451, 0.768627, 1)
+
 [node name="Plane" type="Node2D"]
 script = ExtResource("1_yi7cu")
 
@@ -52,7 +58,7 @@ script = ExtResource("16_5f4ql")
 game_stats = ExtResource("14_imwu1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 4.76837e-07)
+position = Vector2(1, 4.76837e-07)
 scale = Vector2(1.3625, 1.375)
 sprite_frames = SubResource("SpriteFrames_87lq6")
 
@@ -75,7 +81,7 @@ script = ExtResource("7_nxgsa")
 scene = ExtResource("8_w3yhp")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(0, -63)
+position = Vector2(0, -48)
 
 [node name="EnergyTimer" type="Timer" parent="."]
 wait_time = 1.5
@@ -98,3 +104,13 @@ polygon = PackedVector2Array(-42, -24, -12, -24, -12, -34, -9, -34, -9, -43, 8, 
 script = ExtResource("12_ledul")
 player_health_component = NodePath("../PlayerHealthComponent")
 hurtbox_component = NodePath("../HurtboxComponent")
+
+[node name="EnergyBar" type="ProgressBar" parent="."]
+offset_left = -36.0
+offset_top = 44.0
+offset_right = 37.0
+offset_bottom = 71.0
+theme_override_styles/background = SubResource("StyleBoxFlat_cgnu0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ux4b1")
+max_value = 10.0
+value = 5.0

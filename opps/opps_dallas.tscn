@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp7fxb1kkrl7r"]
+[gd_scene load_steps=12 format=3 uid="uid://dp7fxb1kkrl7r"]
 
 [ext_resource type="Script" path="res://opps/opps_dallas.gd" id="1_6l156"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="1_bvenw"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://components/score_component.gd" id="7_c4525"]
 [ext_resource type="Resource" uid="uid://crfoy43it46ev" path="res://game_stats.tres" id="8_32ne8"]
 [ext_resource type="Script" path="res://components/destroyed_component.gd" id="9_vlnly"]
+[ext_resource type="Script" path="res://components/spawner_component.gd" id="10_n5lvg"]
+[ext_resource type="PackedScene" uid="uid://b2b1jlkrxyfrt" path="res://opps/energy_crystal.tscn" id="11_6ile0"]
 
 [node name="OppsDallas" type="Node2D"]
 script = ExtResource("1_6l156")
@@ -23,6 +25,7 @@ script = ExtResource("2_14xhu")
 actor = NodePath("..")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 1)
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 collision_layer = 2
@@ -44,3 +47,13 @@ game_stats = ExtResource("8_32ne8")
 
 [node name="DestroyedComponent" type="Node" parent="."]
 script = ExtResource("9_vlnly")
+
+[node name="CrystalSpawnpoint" type="Marker2D" parent="."]
+
+[node name="CrystalSpawnerTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="CrystalSpawner" type="Node2D" parent="."]
+script = ExtResource("10_n5lvg")
+scene = ExtResource("11_6ile0")

@@ -11,17 +11,25 @@ extends Node2D
 @onready var player_energy_component: PlayerEnergyComponent = $PlayerEnergyComponent as PlayerEnergyComponent
 @onready var energy_timer: Timer = $EnergyTimer
 
+@onready var energy_bar = $EnergyBar
+
+
+@export var energy = 10
 
 func _ready():
+	
+	energy_bar.value = energy
+	
 	fire_rate_timer.timeout.connect(fire_lasers)
 	player_health_component.player_health_changed.connect(func():
 		player_health.adjust_player_health()
 )
 	player_energy_component.player_energy_changed.connect(func():
-		player_energy.adjust_player_energy(player_energy.amount)
+		pass
 )
 	energy_timer.timeout.connect(func():
-		player_energy_component.player_energy -= 1
+		energy -= 1
+		energy_bar.value = energy
 )
 
 func fire_lasers() -> void:
