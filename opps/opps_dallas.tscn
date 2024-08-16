@@ -56,6 +56,5 @@ one_shot = true
 autostart = true
 
 [node name="CrystalSpawner" type="Node2D" parent="."]
-visibility_layer = 5
 script = ExtResource("10_n5lvg")
 scene = ExtResource("11_20yor")
