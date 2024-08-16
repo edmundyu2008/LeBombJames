@@ -55,6 +55,7 @@ expand_mode = 1
 stretch_mode = 1
 
 [node name="Plane" parent="." instance=ExtResource("2_31cqr")]
+z_index = 0
 position = Vector2(280, 829)
 
 [node name="OppGenerator" parent="." instance=ExtResource("3_jg6w0")]

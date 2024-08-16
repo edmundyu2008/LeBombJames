@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cltw1jastd5q3"]
+[gd_scene load_steps=21 format=3 uid="uid://cltw1jastd5q3"]
 
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="1_xvef2"]
 [ext_resource type="Script" path="res://player_plane/plane.gd" id="1_yi7cu"]
@@ -34,7 +34,13 @@ bg_color = Color(0.193497, 0.279596, 0.375466, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux4b1"]
 bg_color = Color(0.313726, 0.67451, 0.768627, 1)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oyx5"]
+radius = 47.0
+height = 94.0
+
 [node name="Plane" type="Node2D"]
+light_mask = 5
+visibility_layer = 5
 script = ExtResource("1_yi7cu")
 
 [node name="PlayerDestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "player_health_component", "player_energy_component")]
@@ -114,3 +120,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_cgnu0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ux4b1")
 max_value = 10.0
 value = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visibility_layer = 5
+shape = SubResource("CapsuleShape2D_3oyx5")

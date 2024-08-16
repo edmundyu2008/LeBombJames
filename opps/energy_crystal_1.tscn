@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpxouhopf8mgq"]
+
+[ext_resource type="Script" path="res://opps/energy_crystal_1.gd" id="1_jwfmv"]
+[ext_resource type="Texture2D" uid="uid://chbdtjxj6cxg7" path="res://energy_bar.png" id="1_rsyn3"]
+[ext_resource type="Script" path="res://components/move_component.gd" id="3_g2dy5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybsaa"]
+size = Vector2(6, 6)
+
+[node name="EnergyCrystal1" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_jwfmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 4
+shape = SubResource("RectangleShape2D_ybsaa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.2, 0.4)
+texture = ExtResource("1_rsyn3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.2, 0.2)
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("3_g2dy5")
+actor = NodePath("..")
+velocity = Vector2(2.08165e-12, 200)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

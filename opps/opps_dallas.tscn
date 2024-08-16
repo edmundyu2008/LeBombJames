@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://crfoy43it46ev" path="res://game_stats.tres" id="8_32ne8"]
 [ext_resource type="Script" path="res://components/destroyed_component.gd" id="9_vlnly"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="10_n5lvg"]
-[ext_resource type="PackedScene" uid="uid://b2b1jlkrxyfrt" path="res://opps/energy_crystal.tscn" id="11_6ile0"]
+[ext_resource type="PackedScene" uid="uid://dpxouhopf8mgq" path="res://opps/energy_crystal_1.tscn" id="11_20yor"]
 
 [node name="OppsDallas" type="Node2D"]
 script = ExtResource("1_6l156")
@@ -52,8 +52,10 @@ script = ExtResource("9_vlnly")
 
 [node name="CrystalSpawnerTimer" type="Timer" parent="."]
 wait_time = 0.1
+one_shot = true
 autostart = true
 
 [node name="CrystalSpawner" type="Node2D" parent="."]
+visibility_layer = 5
 script = ExtResource("10_n5lvg")
-scene = ExtResource("11_6ile0")
+scene = ExtResource("11_20yor")
