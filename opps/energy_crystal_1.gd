@@ -9,16 +9,7 @@ func _ready() -> void:
 
 
 
-
-
-
-
-
-
-
-func _on_body_entered(_body):
-	self.queue_free()
-
-
-func _on_body_exited(body):
-	self.queue_free()
+func _on_area_2d_area_entered(area):
+	if area.get_parent() is Player:
+		area.get_parent().gain_energy(1)
+		queue_free()

@@ -10,28 +10,28 @@ script = ExtResource("1_2k5fc")
 
 [node name="Background" type="ParallaxLayer" parent="."]
 unique_name_in_owner = true
-motion_mirroring = Vector2(2.08165e-12, 960)
+motion_mirroring = Vector2(2.08165e-12, 1152)
 
 [node name="Sky" type="TextureRect" parent="Background"]
-offset_right = 540.0
-offset_bottom = 960.0
+offset_right = 648.0
+offset_bottom = 1152.0
 texture = ExtResource("1_lwp4q")
 
 [node name="FarClouds" type="ParallaxLayer" parent="."]
 unique_name_in_owner = true
-motion_mirroring = Vector2(2.08165e-12, 960)
+motion_mirroring = Vector2(2.08165e-12, 1152)
 
 [node name="FarCloud" type="TextureRect" parent="FarClouds"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 648.0
+offset_bottom = 1152.0
 texture = ExtResource("2_eeg6y")
 stretch_mode = 1
 
 [node name="CloseClouds" type="ParallaxLayer" parent="."]
 unique_name_in_owner = true
-motion_mirroring = Vector2(2.08165e-12, 960)
+motion_mirroring = Vector2(2.08165e-12, 1152)
 
 [node name="CloseCloud" type="TextureRect" parent="CloseClouds"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 648.0
+offset_bottom = 1152.0
 texture = ExtResource("3_laon0")

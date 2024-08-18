@@ -14,7 +14,6 @@ extends Node2D
 
 
 func _ready() -> void: 
-	crystal_spawner_timer.timeout.connect(drop_crystal)
 	stats_component.no_health.connect(func():
 		score_component.adjust_score()
 	)

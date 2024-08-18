@@ -76,8 +76,8 @@ grow_vertical = 2
 script = ExtResource("1_uln5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(280, 829)
-scale = Vector2(1.332, 1.375)
+position = Vector2(335, 1019)
+scale = Vector2(1.2, 1.211)
 texture = ExtResource("3_5rcr4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -101,8 +101,8 @@ color = Color(0, 0, 0, 0.635294)
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Timer"]
 layout_mode = 0
-offset_right = 540.0
-offset_bottom = 960.0
+offset_right = 648.0
+offset_bottom = 1152.0
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer/Timer/CenterContainer"]
 unique_name_in_owner = true

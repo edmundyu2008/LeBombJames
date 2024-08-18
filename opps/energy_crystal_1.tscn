@@ -29,6 +29,3 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("3_g2dy5")
 actor = NodePath("..")
 velocity = Vector2(2.08165e-12, 200)
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]

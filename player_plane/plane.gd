@@ -1,4 +1,5 @@
 extends Node2D
+class_name Player
 
 @onready var muzzle: Marker2D = $Muzzle
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent as SpawnerComponent
@@ -14,10 +15,12 @@ extends Node2D
 @onready var energy_bar = $EnergyBar
 
 
-@export var energy = 10
+@export var energy = 0
+var max_energy = 10
+
 
 func _ready():
-	
+	energy = max_energy
 	energy_bar.value = energy
 	
 	fire_rate_timer.timeout.connect(fire_lasers)
@@ -28,13 +31,18 @@ func _ready():
 		pass
 )
 	energy_timer.timeout.connect(func():
-		energy -= 1
+		lose_energy(1)
 		energy_bar.value = energy
 )
+
 
 func fire_lasers() -> void:
 	spawner_component.spawn(muzzle.global_position)
 
-
+func lose_energy(energy_amount : int):
+	energy -= energy_amount
+	energy_bar.value = energy
+	if energy <= 0:
+		player_destroyed_component.destroy()
 
 
