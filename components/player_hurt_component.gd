@@ -8,4 +8,4 @@ extends Node
 func _ready() -> void:
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
 		player_health_component.player_health -= hitbox_component.damage
-	)
+	)	

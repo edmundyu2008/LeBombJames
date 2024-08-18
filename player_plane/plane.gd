@@ -12,15 +12,12 @@ class_name Player
 
 @onready var energy_bar = $EnergyBar
 
-
 @export var energy = 0
 var max_energy = 10
-
 
 func _ready():
 	energy = max_energy
 	energy_bar.value = energy
-	
 	fire_rate_timer.timeout.connect(fire_lasers)
 	player_health_component.player_health_changed.connect(func():
 		player_health.adjust_player_health()
@@ -30,14 +27,12 @@ func _ready():
 		energy_bar.value = energy
 )
 
-
-func fire_lasers() -> void:
-	spawner_component.spawn(muzzle.global_position)
-
 func lose_energy(energy_amount : int):
 	energy -= energy_amount
 	energy_bar.value = energy
 	if energy <= 0:
 		player_destroyed_component.destroy()
 
+func fire_lasers() -> void:
+	spawner_component.spawn(muzzle.global_position)
 
