@@ -19,6 +19,8 @@ func _ready() -> void:
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://UI/you_died.tscn")
 		)
+		
+func _process(delta):
 	if game_stats.score > game_stats.highscore:
 		game_stats.highscore = game_stats.score
 	high_score_label.text = "Highscore:" + str(game_stats.highscore)
