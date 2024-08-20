@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://sgq6lpm8oo6y"]
+[gd_scene load_steps=9 format=3 uid="uid://sgq6lpm8oo6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0qyg6"]
 [ext_resource type="PackedScene" uid="uid://cltw1jastd5q3" path="res://player_plane/plane.tscn" id="2_31cqr"]
 [ext_resource type="Resource" uid="uid://crfoy43it46ev" path="res://game_stats.tres" id="2_yk8ov"]
 [ext_resource type="PackedScene" uid="uid://cvw4ajho6rrms" path="res://UI/sky_background.tscn" id="3_8bceq"]
 [ext_resource type="PackedScene" uid="uid://cay4vl7nga5bg" path="res://opps/opp_generator.tscn" id="3_jg6w0"]
-[ext_resource type="Texture2D" uid="uid://chbdtjxj6cxg7" path="res://energy_bar.png" id="6_t1jd2"]
 [ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="6_v323r"]
 [ext_resource type="PackedScene" uid="uid://dbc6wuup05crm" path="res://UI/pause_menu.tscn" id="7_45hcr"]
 [ext_resource type="Texture2D" uid="uid://c7x5ngkq4h40s" path="res://pixelheart.png" id="9_6brik"]
@@ -38,19 +37,6 @@ offset_bottom = 1362.0
 grow_vertical = 0
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("9_6brik")
-expand_mode = 1
-stretch_mode = 1
-
-[node name="EnergyBar" type="TextureRect" parent="."]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 1114.0
-offset_right = 220.0
-offset_bottom = 1134.0
-grow_vertical = 0
-texture = ExtResource("6_t1jd2")
 expand_mode = 1
 stretch_mode = 1
 

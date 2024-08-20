@@ -29,7 +29,6 @@ func _on_restart_pressed():
 	get_tree().change_scene_to_file("res://UI/countdown.tscn")
 	game_stats.score = 0
 	game_stats.player_health = 3
-	game_stats.player_energy = 10
 
 
 func _on_exit_pressed():

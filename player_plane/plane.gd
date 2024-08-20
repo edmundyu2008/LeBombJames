@@ -13,7 +13,7 @@ class_name Player
 @onready var energy_bar = $EnergyBar
 
 @export var energy = 0
-var max_energy = 10
+var max_energy = 15
 
 func _ready():
 	energy = max_energy

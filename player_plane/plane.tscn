@@ -104,4 +104,4 @@ offset_right = 37.0
 offset_bottom = 51.0
 theme_override_styles/background = SubResource("StyleBoxFlat_cgnu0")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ux4b1")
-max_value = 10.0
+max_value = 15.0
