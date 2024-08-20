@@ -33,8 +33,6 @@ bg_color = Color(0.193497, 0.279596, 0.375466, 1)
 bg_color = Color(0.313726, 0.67451, 0.768627, 1)
 
 [node name="Plane" type="Node2D"]
-light_mask = 5
-visibility_layer = 5
 script = ExtResource("1_yi7cu")
 
 [node name="PlayerDestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "player_health_component")]

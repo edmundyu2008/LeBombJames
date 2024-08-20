@@ -26,6 +26,8 @@ func _ready() -> void:
 	pause_state.state_finished.connect(move_down_state.enable)
 	move_down_state.enable()
 	
+func drop_crystal() -> void:
+	crystal_spawner.spawn(crystal_spawnpoint.global_position)
 	
 func fire_lasers() -> void:
 	bullet_spawner.spawn(muzzle.global_position)

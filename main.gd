@@ -4,7 +4,8 @@ extends Node2D
 
 @onready var hearts: TextureRect = $Hearts
 @onready var plane: Node2D = $Plane
-@onready var score_label: Label = $ScoreLabel
+@onready var high_score_label = $VBoxContainer/HighScoreLabel
+@onready var score_label = $VBoxContainer/ScoreLabel
 
 var heart_size = 254
 
@@ -18,13 +19,21 @@ func _ready() -> void:
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://UI/you_died.tscn")
 		)
-	
+	if game_stats.score > game_stats.highscore:
+		game_stats.highscore = game_stats.score
+	high_score_label.text = "Highscore:" + str(game_stats.highscore)
+
 
 func update_health_points(new_player_health: int) -> void:
 	$Hearts.size.x = new_player_health * heart_size
 
 func update_score_label(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)
+	
+
+
+
+
 
 
 
