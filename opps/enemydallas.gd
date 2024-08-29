@@ -8,7 +8,6 @@ extends Node2D
 @onready var score_component: ScoreComponent = $ScoreComponent as ScoreComponent
 @onready var destroyed_component: DestroyedComponent = $DestroyedComponent as DestroyedComponent
 @onready var crystal_spawner = $CrystalSpawner
-@onready var crystal_spawner_timer = $CrystalSpawnerTimer
 @onready var crystal_spawnpoint = $CrystalSpawnpoint
 
 

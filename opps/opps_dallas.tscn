@@ -50,11 +50,6 @@ script = ExtResource("9_vlnly")
 
 [node name="CrystalSpawnpoint" type="Marker2D" parent="."]
 
-[node name="CrystalSpawnerTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-autostart = true
-
 [node name="CrystalSpawner" type="Node2D" parent="."]
 script = ExtResource("10_n5lvg")
 scene = ExtResource("11_1cujp")

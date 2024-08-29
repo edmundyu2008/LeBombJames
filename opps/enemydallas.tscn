@@ -42,7 +42,3 @@ polygon = PackedVector2Array(-11, 11, 1, 33, 11, 11, 36, -15, 36, -18, 13, -12, 
 [node name="DestroyedComponent" parent="." index="8" node_paths=PackedStringArray("actor", "stats_component")]
 actor = NodePath("..")
 stats_component = NodePath("../StatsComponent")
-
-[node name="CrystalSpawnerTimer" parent="." index="10"]
-one_shot = false
-autostart = false
