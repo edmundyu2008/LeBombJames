@@ -9,10 +9,12 @@ extends Resource
 		
 @export var highscore: int = 0
 
-@export var player_health: int = 3 :
+@export var player_health: int = 3:
 	set(value):
 		player_health = value
 		player_health_changed.emit(player_health)
-		
-signal score_changed(new_score)
+
+
 signal player_health_changed(new_player_health)
+signal score_changed(new_score)
+
