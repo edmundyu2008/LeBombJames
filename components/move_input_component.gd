@@ -15,3 +15,4 @@ func _input(_event: InputEvent) -> void:
 		input_direction = Vector2.ZERO
 	move_component.velocity = input_direction * move_stats.speed
 
+ 
