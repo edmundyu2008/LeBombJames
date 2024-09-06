@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="1_xvef2"]
 [ext_resource type="Script" path="res://player_plane/plane.gd" id="1_yi7cu"]
 [ext_resource type="Script" path="res://components/move_component.gd" id="2_mxmei"]
-[ext_resource type="Script" path="res://components/move_input_component.gd" id="3_2aq8m"]
-[ext_resource type="Resource" uid="uid://l3xm0ms755d4" path="res://player_plane/ship_move_stats.tres" id="4_tjnxr"]
 [ext_resource type="Script" path="res://components/position_clamp_component.gd" id="5_0p80t"]
+[ext_resource type="Texture2D" uid="uid://cfml7elxa8c4j" path="res://newplaneleft.png" id="6_6t2k7"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="7_nxgsa"]
+[ext_resource type="Texture2D" uid="uid://b54t4ff5hbnis" path="res://newplaneright.png" id="7_umvnq"]
 [ext_resource type="PackedScene" uid="uid://cm4wy11gurd1o" path="res://player_plane/laser.tscn" id="8_w3yhp"]
 [ext_resource type="Script" path="res://components/hurtbox_component.gd" id="10_l1c4b"]
 [ext_resource type="Script" path="res://components/player_health_component.gd" id="12_bmr8r"]
@@ -17,6 +17,22 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_87lq6"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6t2k7")
+}],
+"loop": true,
+"name": &"bankleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_umvnq")
+}],
+"loop": true,
+"name": &"bankright",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_xvef2")
@@ -48,19 +64,13 @@ script = ExtResource("13_gr61j")
 game_stats = ExtResource("14_imwu1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(1.2, 1.211)
 sprite_frames = SubResource("SpriteFrames_87lq6")
+animation = &"bankleft"
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("2_mxmei")
 actor = NodePath("..")
-velocity = Vector2(2.08165e-12, 2.08165e-12)
-
-[node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("move_component")]
-script = ExtResource("3_2aq8m")
-move_stats = ExtResource("4_tjnxr")
-move_component = NodePath("../MoveComponent")
 
 [node name="PositionClampComponent" type="Node2D" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("5_0p80t")

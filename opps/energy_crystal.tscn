@@ -19,6 +19,7 @@ velocity = Vector2(2.08165e-12, 200)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(5.96046e-08, 0)
+rotation = 0.00110359
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_7lnen")
 

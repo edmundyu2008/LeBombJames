@@ -9,6 +9,8 @@ class_name Player
 @onready var player_hurt_component: PlayerHurtComponent = $PlayerHurtComponent as PlayerHurtComponent
 @onready var player_destroyed_component: PlayerDestroyedComponent = $PlayerDestroyedComponent as PlayerDestroyedComponent
 @onready var energy_timer: Timer = $EnergyTimer
+@onready var move_component = $MoveComponent
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 @onready var energy_bar = $EnergyBar
 
@@ -26,6 +28,17 @@ func _ready():
 		lose_energy(1)
 		energy_bar.value = energy
 )
+
+func _process(delta: float) -> void:
+	animate_the_plane()
+
+func animate_the_plane():
+	if move_component.velocity.x < 0:
+		animated_sprite_2d.play("bankleft")
+	elif move_component.velocity.x > 0:
+		animated_sprite_2d.play("bankright")
+	else:
+		animated_sprite_2d.play("default")
 
 func lose_energy(energy_amount : int):
 	energy -= energy_amount
