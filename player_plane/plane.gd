@@ -35,11 +35,15 @@ func _process(delta: float) -> void:
 func animate_the_plane():
 	if move_component.velocity.x < 0:
 		animated_sprite_2d.play("bankleft")
+	elif move_component.velocity.y < 0:
+		animated_sprite_2d.play("bankbackwards")
+	elif move_component.velocity.y > 0:
+		animated_sprite_2d.play("bankforwards")
 	elif move_component.velocity.x > 0:
 		animated_sprite_2d.play("bankright")
 	else:
 		animated_sprite_2d.play("default")
-
+	
 func lose_energy(energy_amount : int):
 	energy -= energy_amount
 	energy_bar.value = energy
