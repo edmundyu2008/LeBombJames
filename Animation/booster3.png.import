@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bopnctagf46us"
-path="res://.godot/imported/backgroundfar.png-24e7f7dd1eda4b69228ab978e86be231.ctex"
+uid="uid://cqarp3gugdfcd"
+path="res://.godot/imported/booster3.png-f29e3ddbc136030234ffce897d407641.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://backgroundfar.png"
-dest_files=["res://.godot/imported/backgroundfar.png-24e7f7dd1eda4b69228ab978e86be231.ctex"]
+source_file="res://Animation/booster3.png"
+dest_files=["res://.godot/imported/booster3.png-f29e3ddbc136030234ffce897d407641.ctex"]
 
 [params]
 

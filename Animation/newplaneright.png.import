@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b54t4ff5hbnis"
-path="res://.godot/imported/newplaneright.png-467ef753e7187b94842348926b140753.ctex"
+path="res://.godot/imported/newplaneright.png-0c2fb48b3fe319bcc3892315fdceae09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://newplaneright.png"
-dest_files=["res://.godot/imported/newplaneright.png-467ef753e7187b94842348926b140753.ctex"]
+source_file="res://Animation/newplaneright.png"
+dest_files=["res://.godot/imported/newplaneright.png-0c2fb48b3fe319bcc3892315fdceae09.ctex"]
 
 [params]
 

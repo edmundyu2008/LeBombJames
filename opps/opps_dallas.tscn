@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dp7fxb1kkrl7r"]
+[gd_scene load_steps=13 format=3 uid="uid://dp7fxb1kkrl7r"]
 
 [ext_resource type="Script" path="res://opps/opps_dallas.gd" id="1_6l156"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="1_bvenw"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://components/destroyed_component.gd" id="9_vlnly"]
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="10_n5lvg"]
 [ext_resource type="PackedScene" uid="uid://b2b1jlkrxyfrt" path="res://opps/energy_crystal.tscn" id="11_1cujp"]
+[ext_resource type="PackedScene" uid="uid://bxtsbd0b514j2" path="res://UI/explosion_effect.tscn" id="12_hwsvy"]
 
 [node name="OppsDallas" type="Node2D"]
 script = ExtResource("1_6l156")
@@ -45,11 +46,18 @@ hurtbox_component = NodePath("../HurtboxComponent")
 script = ExtResource("7_c4525")
 game_stats = ExtResource("8_32ne8")
 
-[node name="DestroyedComponent" type="Node" parent="."]
+[node name="DestroyedComponent" type="Node" parent="." node_paths=PackedStringArray("actor", "stats_component", "destroy_effect_spawner_component")]
 script = ExtResource("9_vlnly")
+actor = NodePath("..")
+stats_component = NodePath("../StatsComponent")
+destroy_effect_spawner_component = NodePath("../SpawnerComponent")
 
 [node name="CrystalSpawnpoint" type="Marker2D" parent="."]
 
 [node name="CrystalSpawner" type="Node2D" parent="."]
 script = ExtResource("10_n5lvg")
 scene = ExtResource("11_1cujp")
+
+[node name="SpawnerComponent" type="Node2D" parent="."]
+script = ExtResource("10_n5lvg")
+scene = ExtResource("12_hwsvy")

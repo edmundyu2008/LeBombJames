@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvw4ajho6rrms"]
 
 [ext_resource type="Script" path="res://UI/sky_background.gd" id="1_2k5fc"]
-[ext_resource type="Texture2D" uid="uid://bopnctagf46us" path="res://backgroundfar.png" id="1_lwp4q"]
-[ext_resource type="Texture2D" uid="uid://nu4jjte7ko35" path="res://backgroundclose.png" id="2_eeg6y"]
-[ext_resource type="Texture2D" uid="uid://bvtcmaybxx5fj" path="res://cloudlayerclosest.png" id="3_laon0"]
+[ext_resource type="Texture2D" uid="uid://bopnctagf46us" path="res://Animation/backgroundfar.png" id="1_lwp4q"]
+[ext_resource type="Texture2D" uid="uid://nu4jjte7ko35" path="res://Animation/backgroundclose.png" id="2_eeg6y"]
+[ext_resource type="Texture2D" uid="uid://bvtcmaybxx5fj" path="res://Animation/cloudlayerclosest.png" id="3_laon0"]
 
 [node name="SkyBackground" type="ParallaxBackground"]
 script = ExtResource("1_2k5fc")

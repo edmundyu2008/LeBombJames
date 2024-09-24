@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvtcmaybxx5fj"
-path="res://.godot/imported/cloudlayerclosest.png-5956f96337ed870f43b0c7d062a3d65d.ctex"
+uid="uid://cfml7elxa8c4j"
+path="res://.godot/imported/newplaneleft.png-db6f579d4b5421d94c94254eced75887.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cloudlayerclosest.png"
-dest_files=["res://.godot/imported/cloudlayerclosest.png-5956f96337ed870f43b0c7d062a3d65d.ctex"]
+source_file="res://Animation/newplaneleft.png"
+dest_files=["res://.godot/imported/newplaneleft.png-db6f579d4b5421d94c94254eced75887.ctex"]
 
 [params]
 

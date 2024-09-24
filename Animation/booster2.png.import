@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfml7elxa8c4j"
-path="res://.godot/imported/newplaneleft.png-b523e6c19405abe3064ec072ed637eee.ctex"
+uid="uid://bd1uuqkg4odh"
+path="res://.godot/imported/booster2.png-302d604bf87db75614339bb0561dd398.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://newplaneleft.png"
-dest_files=["res://.godot/imported/newplaneleft.png-b523e6c19405abe3064ec072ed637eee.ctex"]
+source_file="res://Animation/booster2.png"
+dest_files=["res://.godot/imported/booster2.png-302d604bf87db75614339bb0561dd398.ctex"]
 
 [params]
 

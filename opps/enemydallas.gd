@@ -18,7 +18,7 @@ func _ready() -> void:
 		score_component.adjust_score()
 	)
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
-	hitbox_component.hit_hurtbox.connect(queue_free.unbind(1))
+	hitbox_component.hit_hurtbox.connect(destroyed_component.destroy.unbind(1))
 	
 func drop_crystal() -> void:
 	crystal_spawner.spawn(crystal_spawnpoint.global_position)

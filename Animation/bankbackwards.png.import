@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p7wsokrvexhd"
-path="res://.godot/imported/bankforwards.png-51c1eeeb36ec6dd2c25bbfbd349fcb3f.ctex"
+uid="uid://duw0b22wausgb"
+path="res://.godot/imported/bankbackwards.png-d5bf4cb1fc3e5de6b06520a78cb50dfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bankforwards.png"
-dest_files=["res://.godot/imported/bankforwards.png-51c1eeeb36ec6dd2c25bbfbd349fcb3f.ctex"]
+source_file="res://Animation/bankbackwards.png"
+dest_files=["res://.godot/imported/bankbackwards.png-d5bf4cb1fc3e5de6b06520a78cb50dfd.ctex"]
 
 [params]
 
