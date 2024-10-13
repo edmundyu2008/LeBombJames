@@ -3,9 +3,9 @@ extends Control
 @export var tween_intensity: float
 @export var tween_duration: float
 
-@onready var playbutton: Button = $PlayButton
-@onready var settingsbutton: Button = $SettingsButton
-@onready var exitbutton: Button = $ExitButton
+@onready var playbutton: TextureButton = $PlayButton
+@onready var settingsbutton: TextureButton = $SettingsButton
+@onready var exitbutton: TextureButton = $ExitButton
 
 func _process(delta: float) -> void:
 	button_hovered(playbutton)
@@ -16,7 +16,7 @@ func start_tween(object: Object, property: String, final_val: Variant, duration:
 	var tween = create_tween()
 	tween.tween_property(object, property, final_val, duration)
 	
-func button_hovered(button: Button):
+func button_hovered(button: TextureButton):
 	button.pivot_offset = button.size / 2
 	if button.is_hovered():
 		start_tween(button, "scale", Vector2.ONE * tween_intensity, tween_duration)

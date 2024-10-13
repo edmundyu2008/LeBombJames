@@ -6,10 +6,12 @@ extends Node2D
 @onready var plane: Node2D = $Plane
 @onready var high_score_label = $VBoxContainer/HighScoreLabel
 @onready var score_label = $VBoxContainer/ScoreLabel
+@onready var red_overlay: TextureRect = $RedOverlay
 
 var heart_size = 254
 
 func _ready() -> void:
+	red_overlay.hide()
 	randomize()
 	update_score_label(game_stats.score)
 	game_stats.score_changed.connect(update_score_label)
@@ -24,6 +26,8 @@ func _process(_delta):
 	if game_stats.score > game_stats.highscore:
 		game_stats.highscore = game_stats.score
 	high_score_label.text = "Highscore:" + str(game_stats.highscore)
+	if game_stats.player_health < 2:
+		red_overlay.show()
 
 
 func update_health_points(new_player_health: int) -> void:

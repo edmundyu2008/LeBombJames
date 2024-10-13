@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://sgq6lpm8oo6y"]
+[gd_scene load_steps=10 format=3 uid="uid://sgq6lpm8oo6y"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0qyg6"]
 [ext_resource type="PackedScene" uid="uid://cltw1jastd5q3" path="res://player_plane/plane.tscn" id="2_31cqr"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="6_v323r"]
 [ext_resource type="PackedScene" uid="uid://dbc6wuup05crm" path="res://UI/pause_menu.tscn" id="7_45hcr"]
 [ext_resource type="Texture2D" uid="uid://c7x5ngkq4h40s" path="res://pixelheart.png" id="9_6brik"]
+[ext_resource type="Texture2D" uid="uid://buxwetkvnptsm" path="res://UI/redoverlay.png" id="9_p7xsp"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0qyg6")
@@ -58,3 +59,10 @@ position = Vector2(335, 1019)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_45hcr")]
 visible = false
+
+[node name="RedOverlay" type="TextureRect" parent="."]
+offset_top = 1.0
+offset_right = 648.0
+offset_bottom = 1152.0
+texture = ExtResource("9_p7xsp")
+expand_mode = 1
