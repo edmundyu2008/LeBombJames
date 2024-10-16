@@ -10,6 +10,7 @@ extends "res://opps/opps_dallas.gd"
 @onready var muzzle: Marker2D = $Muzzle
 @onready var fire_rate_timer: Timer = $FireRateTimer
 
+
 func _ready() -> void:
 	fire_rate_timer.timeout.connect(fire_lasers)
 	hitbox_component.hit_hurtbox.connect(destroyed_component.destroy.unbind(1))

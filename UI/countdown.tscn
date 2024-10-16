@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqj3joh0yuscj"]
+[gd_scene load_steps=10 format=3 uid="uid://dqj3joh0yuscj"]
 
 [ext_resource type="Script" path="res://UI/Countdown.gd" id="1_uln5o"]
 [ext_resource type="Texture2D" uid="uid://dgmft2q37eiop" path="res://player_plane/player1.png" id="3_5rcr4"]
 [ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="3_opc4v"]
 [ext_resource type="PackedScene" uid="uid://cvw4ajho6rrms" path="res://UI/sky_background.tscn" id="4_r5wp0"]
+[ext_resource type="AudioStream" uid="uid://bxo5ysswyr1t3" path="res://Audio/countdown_sound.wav" id="5_efo2l"]
+[ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="6_fmw51"]
 
 [sub_resource type="Animation" id="Animation_l303r"]
 length = 0.001
@@ -122,5 +124,13 @@ theme_override_font_sizes/font_size = 24
 text = "Press 'Esc' to pause"
 
 [node name="SkyBackground" parent="." instance=ExtResource("4_r5wp0")]
+
+[node name="CountdownTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="VariablePitchAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_efo2l")
+script = ExtResource("6_fmw51")
+auto_play_with_variance = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

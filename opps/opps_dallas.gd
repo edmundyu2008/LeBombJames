@@ -6,6 +6,8 @@ extends Node2D
 @onready var hitbox_component: HitboxComponent = $HitboxComponent as HitboxComponent
 @onready var score_component: ScoreComponent = $ScoreComponent as ScoreComponent
 @onready var destroyed_component = $DestroyedComponent as DestroyedComponent
+@onready var variable_pitch_audio_stream_player: = $VariablePitchAudioStreamPlayer as VariablePitchAudioStreamPlayer
+
 
 @onready var crystal_spawner = $CrystalSpawner
 @onready var crystal_spawnpoint = $CrystalSpawnpoint
@@ -18,6 +20,9 @@ func _ready() -> void:
 		score_component.adjust_score()
 	)
 	visible_on_screen_notifier_2d.screen_exited.connect(queue_free)
+	hurtbox_component.hurt.connect(func(hitbox: HitboxComponent):
+		variable_pitch_audio_stream_player.play_with_variance()
+	)
 	hitbox_component.hit_hurtbox.connect(destroyed_component.destroy.unbind(1))
 	
 func drop_crystal() -> void:

@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxtsbd0b514j2"]
+[gd_scene load_steps=9 format=3 uid="uid://bxtsbd0b514j2"]
 
 [ext_resource type="Texture2D" uid="uid://00jtpmmkildl" path="res://Animation/explosion1.png" id="1_0ugrv"]
 [ext_resource type="Script" path="res://components/onetime_animated_effect.gd" id="1_auecw"]
 [ext_resource type="Texture2D" uid="uid://2jfvp4dfs8cu" path="res://Animation/explosion2.png" id="2_b6krd"]
 [ext_resource type="Texture2D" uid="uid://cxnyymsavw14n" path="res://Animation/explosion3.png" id="3_qb11s"]
 [ext_resource type="Texture2D" uid="uid://csp8f0q28e3ru" path="res://Animation/explosion4.png" id="4_rq1g6"]
+[ext_resource type="AudioStream" uid="uid://cun7ckgep6o4b" path="res://Audio/explosion_sfx.wav" id="6_i3um2"]
+[ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="7_3dnbt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_film7"]
 animations = [{
@@ -32,3 +34,9 @@ sprite_frames = SubResource("SpriteFrames_film7")
 autoplay = "default"
 frame_progress = 0.277021
 script = ExtResource("1_auecw")
+
+[node name="VariablePitchAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_i3um2")
+bus = &"SFX"
+script = ExtResource("7_3dnbt")
+auto_play_with_variance = true

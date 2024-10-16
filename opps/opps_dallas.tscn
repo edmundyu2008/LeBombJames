@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp7fxb1kkrl7r"]
+[gd_scene load_steps=15 format=3 uid="uid://dp7fxb1kkrl7r"]
 
 [ext_resource type="Script" path="res://opps/opps_dallas.gd" id="1_6l156"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="1_bvenw"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://components/spawner_component.gd" id="10_n5lvg"]
 [ext_resource type="PackedScene" uid="uid://b2b1jlkrxyfrt" path="res://opps/energy_crystal.tscn" id="11_1cujp"]
 [ext_resource type="PackedScene" uid="uid://bxtsbd0b514j2" path="res://UI/explosion_effect.tscn" id="12_hwsvy"]
+[ext_resource type="AudioStream" uid="uid://dewvu3x2t0nu2" path="res://Audio/sounds_hit_sound.wav" id="13_hjpnr"]
+[ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="14_siuy2"]
 
 [node name="OppsDallas" type="Node2D"]
 script = ExtResource("1_6l156")
@@ -61,3 +63,9 @@ scene = ExtResource("11_1cujp")
 [node name="SpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("10_n5lvg")
 scene = ExtResource("12_hwsvy")
+
+[node name="VariablePitchAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_hjpnr")
+volume_db = 5.0
+bus = &"SFX"
+script = ExtResource("14_siuy2")

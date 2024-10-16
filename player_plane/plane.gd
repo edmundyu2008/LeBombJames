@@ -11,6 +11,7 @@ class_name Player
 @onready var energy_timer: Timer = $EnergyTimer
 @onready var move_component = $MoveComponent
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var variable_pitch_audio_stream_player = $VariablePitchAudioStreamPlayer as VariablePitchAudioStreamPlayer
 
 @onready var energy_bar = $EnergyBar
 
@@ -51,5 +52,6 @@ func lose_energy(energy_amount : int):
 		player_destroyed_component.destroy()
 
 func fire_lasers() -> void:
+	variable_pitch_audio_stream_player.play_with_variance()
 	spawner_component.spawn(muzzle.global_position)
 
