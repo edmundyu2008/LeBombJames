@@ -12,6 +12,7 @@ class_name Player
 @onready var move_component = $MoveComponent
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var variable_pitch_audio_stream_player = $VariablePitchAudioStreamPlayer as VariablePitchAudioStreamPlayer
+@onready var audio_stream_player = $AudioStreamPlayer
 
 @onready var energy_bar = $EnergyBar
 
@@ -23,6 +24,7 @@ func _ready():
 	energy_bar.value = energy
 	fire_rate_timer.timeout.connect(fire_lasers)
 	player_health_component.player_health_changed.connect(func():
+		audio_stream_player.play()
 		player_health.adjust_player_health()
 )
 	energy_timer.timeout.connect(func():

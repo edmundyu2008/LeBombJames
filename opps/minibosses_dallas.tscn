@@ -89,6 +89,3 @@ autostart = true
 [node name="BulletSpawner" type="Node2D" parent="." index="11"]
 script = ExtResource("8_kfj5k")
 scene = ExtResource("9_muoci")
-
-[node name="VariablePitchAudioStreamPlayer" parent="." index="16"]
-bus = &"SFX"

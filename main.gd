@@ -7,10 +7,13 @@ extends Node2D
 @onready var high_score_label = $VBoxContainer/HighScoreLabel
 @onready var score_label = $VBoxContainer/ScoreLabel
 @onready var red_overlay: TextureRect = $RedOverlay
+@onready var audio_stream_player = $AudioStreamPlayer
 
 var heart_size = 254
 
 func _ready() -> void:
+	game_stats.score = 0
+	game_stats.player_health = 3
 	red_overlay.hide()
 	randomize()
 	update_score_label(game_stats.score)
@@ -28,6 +31,8 @@ func _process(_delta):
 	high_score_label.text = "Highscore:" + str(game_stats.highscore)
 	if game_stats.player_health < 2:
 		red_overlay.show()
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
 
 
 func update_health_points(new_player_health: int) -> void:
@@ -35,7 +40,6 @@ func update_health_points(new_player_health: int) -> void:
 
 func update_score_label(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)
-	
 
 
 

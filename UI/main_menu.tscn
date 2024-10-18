@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5fs8gn08j22s"]
+[gd_scene load_steps=9 format=3 uid="uid://c5fs8gn08j22s"]
 
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_uu28l"]
 [ext_resource type="PackedScene" uid="uid://cvw4ajho6rrms" path="res://UI/sky_background.tscn" id="2_0csxi"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ddgtu5kyq16oa" path="res://UI/settingsbutton.png" id="4_apg8w"]
 [ext_resource type="Texture2D" uid="uid://cm26q4q5ogdd7" path="res://UI/exitbutton.png" id="5_q6nuy"]
 [ext_resource type="Texture2D" uid="uid://b7h5bf3e2bley" path="res://UI/titlenew.png" id="6_aqoow"]
+[ext_resource type="AudioStream" uid="uid://blkkx4k20nvwj" path="res://Audio/selected.wav" id="7_ru36s"]
+[ext_resource type="Script" path="res://components/variable_pitch_audio_stream_player.gd" id="8_07k1d"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -60,6 +62,10 @@ offset_right = 247.0
 offset_bottom = 270.0
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("6_aqoow")
+
+[node name="VariablePitchAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ru36s")
+script = ExtResource("8_07k1d")
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

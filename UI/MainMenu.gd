@@ -6,6 +6,7 @@ extends Control
 @onready var playbutton: TextureButton = $PlayButton
 @onready var settingsbutton: TextureButton = $SettingsButton
 @onready var exitbutton: TextureButton = $ExitButton
+@onready var variable_pitch_audio_stream_player = $VariablePitchAudioStreamPlayer
 
 func _process(delta: float) -> void:
 	button_hovered(playbutton)
@@ -27,9 +28,13 @@ func button_hovered(button: TextureButton):
 
 
 func _on_play_button_pressed():
+	variable_pitch_audio_stream_player.play_with_variance()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://UI/countdown.tscn")
 
 func _on_settings_button_pressed():
+	variable_pitch_audio_stream_player.play_with_variance()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://UI/settings.tscn")
 
 func _on_exit_button_pressed():

@@ -130,6 +130,3 @@ scale = Vector2(1.10625, 0.66875)
 sprite_frames = SubResource("SpriteFrames_f6utj")
 autoplay = "default"
 frame_progress = 0.590085
-
-[node name="VariablePitchAudioStreamPlayer" parent="." index="13"]
-bus = &"SFX"
