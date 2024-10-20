@@ -21,8 +21,6 @@ func _on_resume_pressed():
 func _on_restart_pressed():
 	resume()
 	get_tree().change_scene_to_file("res://UI/countdown.tscn")
-	game_stats.score = 0
-	game_stats.player_health = 3
 
 func _on_exit_pressed():
 	get_tree().paused = false 

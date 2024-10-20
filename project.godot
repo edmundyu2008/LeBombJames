@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ResourceStash="*res://ResourceStash.gd"
+EnergyCrystalSfx="*res://UI/energy_crystal_sfx.tscn"
 
 [display]
 

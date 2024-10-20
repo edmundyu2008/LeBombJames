@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4ja00xnw3coh"]
+[gd_scene load_steps=6 format=3 uid="uid://d4ja00xnw3coh"]
 
 [ext_resource type="Script" path="res://UI/you_died.gd" id="1_fyss8"]
 [ext_resource type="Resource" uid="uid://crfoy43it46ev" path="res://game_stats.tres" id="2_xpl2k"]
 [ext_resource type="FontFile" uid="uid://jl34hxvwvjwv" path="res://kenney_mini_square.ttf" id="4_b0pga"]
 [ext_resource type="PackedScene" uid="uid://cvw4ajho6rrms" path="res://UI/sky_background.tscn" id="4_lm5tk"]
+[ext_resource type="AudioStream" uid="uid://b8tmykorrbps7" path="res://Audio/deathscreenmusic.wav" id="5_v2kyx"]
 
 [node name="YouDied" type="Control"]
 layout_mode = 3
@@ -83,3 +84,6 @@ text = "Press space to return to main menu"
 horizontal_alignment = 1
 
 [node name="SkyBackground" parent="." instance=ExtResource("4_lm5tk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_v2kyx")

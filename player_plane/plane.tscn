@@ -157,3 +157,4 @@ pitch_min = 0.8
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_8hea6")
 volume_db = 0.468
+bus = &"SFX"

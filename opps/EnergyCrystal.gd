@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _on_area_2d_area_entered(area):
 	if area.get_parent() is Player:
+		EnergyCrystalSfx.play_sound()
 		area.get_parent().energy += 1
 		area.get_parent().energy_bar.value = area.get_parent().energy
 		queue_free()

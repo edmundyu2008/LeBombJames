@@ -4,6 +4,7 @@ extends Control
 
 @onready var score_value: Label = %ScoreValue
 @onready var highscore_value: Label = %HighScoreValue
+@onready var audio_stream_player = $AudioStreamPlayer
 
 func _ready() -> void:
 	if game_stats.score > game_stats.highscore:
@@ -13,6 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		game_stats.score = 0
-		game_stats.player_health = 3
 		get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()
+
