@@ -13,7 +13,6 @@ class_name Player
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var variable_pitch_audio_stream_player = $VariablePitchAudioStreamPlayer as VariablePitchAudioStreamPlayer
 @onready var audio_stream_player = $AudioStreamPlayer
-
 @onready var energy_bar = $EnergyBar
 
 @export var energy = 0

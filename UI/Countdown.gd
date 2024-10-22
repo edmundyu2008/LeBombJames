@@ -9,8 +9,9 @@ extends Node
 
 func _ready():
 	animation_player.play("Timer")
-	await animation_player.animation_finished
-	countdown_timer.timeout.connect(countdown_sound)
+
+func _process(delta):
+	countdown_timer.timeout.connect(variable_pitch_audio_stream_player.play_with_variance)
 	
 func countdown_sound() -> void:
 	variable_pitch_audio_stream_player.play_with_variance()

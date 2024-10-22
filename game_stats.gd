@@ -18,3 +18,5 @@ extends Resource
 signal player_health_changed(new_player_health)
 signal score_changed(new_score)
 
+
+
