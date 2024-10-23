@@ -52,7 +52,7 @@ game_stats = ExtResource("8_32ne8")
 script = ExtResource("9_vlnly")
 actor = NodePath("..")
 stats_component = NodePath("../StatsComponent")
-destroy_effect_spawner_component = NodePath("../SpawnerComponent")
+destroy_effect_spawner_component = NodePath("../DestroyEffectSpawnerComponent")
 
 [node name="CrystalSpawnpoint" type="Marker2D" parent="."]
 
@@ -60,7 +60,7 @@ destroy_effect_spawner_component = NodePath("../SpawnerComponent")
 script = ExtResource("10_n5lvg")
 scene = ExtResource("11_1cujp")
 
-[node name="SpawnerComponent" type="Node2D" parent="."]
+[node name="DestroyEffectSpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("10_n5lvg")
 scene = ExtResource("12_hwsvy")
 

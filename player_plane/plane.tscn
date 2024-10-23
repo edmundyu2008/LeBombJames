@@ -76,7 +76,7 @@ script = ExtResource("1_yi7cu")
 script = ExtResource("12_popir")
 actor = NodePath("..")
 player_health_component = NodePath("../PlayerHealthComponent")
-destroy_effect_spawner_component = NodePath("../ExplosionEffectSpawner")
+destroy_effect_spawner_component = NodePath("../DestroyEffectSpawnerComponent")
 
 [node name="PlayerHealthComponent" type="Node" parent="."]
 script = ExtResource("12_bmr8r")
@@ -132,7 +132,7 @@ script = ExtResource("17_trpy2")
 move_stats = ExtResource("18_b8anx")
 move_component = NodePath("../MoveComponent")
 
-[node name="ExplosionEffectSpawner" type="Node2D" parent="."]
+[node name="DestroyEffectSpawnerComponent" type="Node2D" parent="."]
 script = ExtResource("7_nxgsa")
 scene = ExtResource("19_k2qek")
 
