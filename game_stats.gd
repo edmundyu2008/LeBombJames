@@ -9,6 +9,7 @@ extends Resource
 		
 @export var highscore: int = 0
 
+
 @export var player_health: int = 3:
 	set(value):
 		player_health = value

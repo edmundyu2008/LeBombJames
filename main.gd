@@ -9,9 +9,11 @@ extends Node2D
 @onready var red_overlay: TextureRect = $RedOverlay
 @onready var audio_stream_player = $AudioStreamPlayer
 
+var save_load_script = saveload.new()
 var heart_size = 254
 
 func _ready() -> void:
+	save_load_script.load_score()
 	game_stats.score = 0
 	game_stats.player_health = 3
 	red_overlay.hide()
@@ -28,7 +30,10 @@ func _ready() -> void:
 func _process(_delta):
 	if game_stats.score > game_stats.highscore:
 		game_stats.highscore = game_stats.score
-	high_score_label.text = "Highscore:" + str(game_stats.highscore)
+		save_load_script._update_highest_score(game_stats.highscore)
+	if game_stats.highscore > save_load_script.highest_score:
+		save_load_script.highest_score = game_stats.highscore
+	high_score_label.text = "Highscore:" + str(save_load_script.highest_score)
 	if game_stats.player_health < 2:
 		red_overlay.show()
 	if $AudioStreamPlayer.playing == false:
