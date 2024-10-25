@@ -12,4 +12,7 @@ func _ready() -> void:
 		state_finished.emit()
 		disable()
 	)
+	# Has the timer as a child so the function can be connected to the timer
+	# then disables 
 	enabled.connect(timer.start.bind(duration))
+	

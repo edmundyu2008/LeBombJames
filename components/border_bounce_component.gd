@@ -15,3 +15,4 @@ func _process(_delta: float) -> void:
 	elif actor.global_position.x > right_border - margin:
 		actor.global_position.x = right_border - margin
 		move_component.velocity = move_component.velocity.bounce(Vector2.LEFT)
+	# Bounces when in contact with the border

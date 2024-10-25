@@ -6,6 +6,7 @@ extends Node
 		health = value
 		health_changed.emit()
 		if health == 0: no_health.emit()
+		# Setter connected and signals when the health has changed or it is at 0
 		
 signal health_changed() 
 signal no_health() 

@@ -4,14 +4,17 @@ extends Control
 func resume():
 	self.hide()
 	get_tree().paused = false
+	# Resumes and makes the paused false
 	
 func pause():
 	self.show()
 	get_tree().paused = true
+	# Pauses and makes the paused true
 	
 func testEsc():
 	if Input.is_action_just_pressed("escape") and !get_tree().paused:
 		pause()
+		# If the esc button is pressed and it is not paused, it pauses
 	elif Input.is_action_just_pressed("escape") and get_tree().paused:
 		resume()
 

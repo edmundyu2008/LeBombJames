@@ -19,6 +19,7 @@ func save_score():
 	var file = FileAccess.open("res://highest_score.json", FileAccess.WRITE)
 	file.store_line(json_string)
 	file.close()
+	# Allows the score to be saved in the file
 	
 func load_score():
 	var file = FileAccess.open("res://highest_score.json", FileAccess.READ)
@@ -26,6 +27,7 @@ func load_score():
 	file.close()
 	data = file_data
 	highest_score = data["highestscore"]
+	# Loads the score from the file
 	
 func _update_highest_score(value : int):
 	highest_score = value

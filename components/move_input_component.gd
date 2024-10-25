@@ -14,5 +14,6 @@ func _input(_event: InputEvent) -> void:
 	else:
 		input_direction = Vector2.ZERO
 	move_component.velocity = input_direction * move_stats.speed
-
+	# Only allows for 4 directional movement by negating the other axis movement when 
+	# inputs from both axis occur
  

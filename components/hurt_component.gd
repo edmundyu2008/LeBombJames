@@ -9,3 +9,4 @@ func _ready() -> void:
 	hurtbox_component.hurt.connect(func(hitbox_component: HitboxComponent):
 		stats_component.health -= hitbox_component.damage
 	)
+# Subtracts the amount of damage done by the hitbox when hurtbox is hurt

@@ -1,5 +1,5 @@
-extends Node2D
 class_name Player
+extends Node2D
 
 @onready var muzzle: Marker2D = $Muzzle
 @onready var spawner_component: SpawnerComponent = $SpawnerComponent as SpawnerComponent
@@ -21,15 +21,19 @@ var max_energy = 15
 func _ready():
 	energy = max_energy
 	energy_bar.value = energy
+	# Sets energy value and energy bar to maximum at the beginning of the game
 	fire_rate_timer.timeout.connect(fire_lasers)
+	# Timer for fire rate of lasers
 	player_health_component.player_health_changed.connect(func():
 		audio_stream_player.play()
 		player_health.adjust_player_health()
 )
+# When the player is damaged he loses health and plays a sound
 	energy_timer.timeout.connect(func():
 		lose_energy(1)
 		energy_bar.value = energy
 )
+# The player loses energy every 2 seconds
 
 func _process(delta: float) -> void:
 	animate_the_plane()
@@ -45,12 +49,15 @@ func animate_the_plane():
 		animated_sprite_2d.play("bankright")
 	else:
 		animated_sprite_2d.play("default")
+	# Plays the different animations depending on the velocity
 	
 func lose_energy(energy_amount : int):
 	energy -= energy_amount
 	energy_bar.value = energy
 	if energy <= 0:
 		player_destroyed_component.destroy()
+# The function that subtracts the energy of the player and makes the energy bar equal to the 
+# energy value and checks if it is 0 to call the destroy function
 
 func fire_lasers() -> void:
 	variable_pitch_audio_stream_player.play_with_variance()

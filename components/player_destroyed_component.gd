@@ -10,3 +10,4 @@ func _ready() -> void:
 func destroy() -> void:
 	destroy_effect_spawner_component.spawn(actor.global_position)
 	actor.queue_free()
+	# Create an effect (from the spawner component) and free the actor

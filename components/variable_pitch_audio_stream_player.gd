@@ -14,3 +14,4 @@ func _ready() -> void:
 func play_with_variance(from_position: float = 0.0) -> void:
 	pitch_scale = randf_range(pitch_min, pitch_max)
 	play(from_position)
+	# Sets the pitch scale the randomiser can choose within and plays the sound

@@ -7,6 +7,6 @@ var is_invincible = false:
 		for child in get_children():
 			if not child is CollisionShape2D and not child is CollisionPolygon2D: continue
 			child.set_deferred("disabled", is_invincible)
-
-
+			# Manages the invincibility by updating a variable and disabling child collision shapes
+			
 signal hurt(hitbox)

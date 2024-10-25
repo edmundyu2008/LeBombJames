@@ -8,3 +8,4 @@ func _process(delta: float) -> void:
 	background.motion_offset.y += 2 * delta
 	far_clouds.motion_offset.y += 10 * delta
 	close_clouds.motion_offset.y += 20 * delta
+	# The layers move vertically down at different speeds

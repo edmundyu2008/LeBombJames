@@ -15,9 +15,12 @@ func _ready() -> void:
 		game_stats.highscore = game_stats.score
 	score_value.text = str(game_stats.score)
 	highscore_value.text = str(save_load_script.highest_score)
+	# Displays the values of the highscore and achieved score
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+		# Checks if the ui_accept button is pressed and will change scene if it is
 	if $AudioStreamPlayer.playing == false:
 		$AudioStreamPlayer.play()
+	

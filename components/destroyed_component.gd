@@ -11,3 +11,5 @@ func destroy() -> void:
 	destroy_effect_spawner_component.spawn(actor.global_position)
 	actor.drop_crystal()
 	actor.queue_free()
+	# Create an effect (from the spawner component), calls the drop crystal
+	# function and free the actor
